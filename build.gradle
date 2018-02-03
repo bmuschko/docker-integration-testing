@@ -1,0 +1,18 @@
+apply plugin: 'groovy'
+apply from: 'gradle/integration-test.gradle'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+version = '1.0.0'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy:2.4.13'
+    compile('com.googlecode.json-simple:json-simple:1.1.1') {
+        exclude group: 'junit', module: 'junit'
+    }
+    testCompile 'org.spockframework:spock-core:1.1-groovy-2.4'
+}

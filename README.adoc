@@ -1,0 +1,3 @@
+= Integration testing against a Docker container image:https://travis-ci.org/bmuschko/docker-integration-testing.svg?branch=master["Build Status", link="https://travis-ci.org/bmuschko/docker-integration-testing"]
+
+An application that requires an external web service to be available at runtime. Spawns the web service as Docker container during integration testing with the help of the link:https://github.com/bmuschko/gradle-docker-plugin[Gradle Docker plugin].
