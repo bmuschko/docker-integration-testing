@@ -38,7 +38,7 @@ import com.bmuschko.gradle.docker.tasks.container.extras.DockerWaitHealthyContai
 
 task pullImage(type: DockerPullImage) {
     group = 'Docker'
-    repository= 'bmuschko/account-web-service'
+    repository = 'bmuschko/account-web-service'
     tag = '1.0.0'
 }
 
@@ -60,9 +60,6 @@ task waitOnHealthyContainer(type: DockerWaitHealthyContainer) {
     dependsOn startContainer
     timeout = 60
     targetContainerId { createContainer.getContainerId() }
-    onNext { message ->
-        logger.quiet message.toString()
-    }
 }
 
 task stopContainer(type: DockerStopContainer) {
