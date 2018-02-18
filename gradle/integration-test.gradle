@@ -55,7 +55,7 @@ task startContainer(type: DockerStartContainer) {
     targetContainerId { createContainer.getContainerId() }
 }
 
-task waitOnHealthyContainer(type: DockerWaitHealthyContainer) {
+task startAndWaitOnHealthyContainer(type: DockerWaitHealthyContainer) {
     group = 'Docker'
     dependsOn startContainer
     timeout = 60
@@ -68,6 +68,6 @@ task stopContainer(type: DockerStopContainer) {
 }
 
 integrationTest {
-    dependsOn startContainer, waitOnHealthyContainer
+    dependsOn startAndWaitOnHealthyContainer
     finalizedBy stopContainer
 }
